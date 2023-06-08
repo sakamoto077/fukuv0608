@@ -1,15 +1,20 @@
 using System.Globalization;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace fukuv0608
 {
     public partial class Form1 : Form
     {
-        int vx = -5;
-        int vy = -5;
+        int vx = rand.Next(-5,6);
+        int vy = rand.Next(-5,6);
         int iTime = 0;
+        static Random rand = new Random();
+
         public Form1()
         {
             InitializeComponent();
+            label1.Left = rand.Next(ClientSize.Width - label1.Width);
+            label1.Top = rand.Next(ClientSize.Height - label1.Height);
         }
 
 
